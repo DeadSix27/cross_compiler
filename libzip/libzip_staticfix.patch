@@ -1,0 +1,21 @@
+This file is part of MXE. See LICENSE.md for licensing information.
+
+This is a quick&dirty fix.
+
+The bug is being discussed at
+http://www.nih.at/listarchive/libzip-discuss/msg00304.html
+
+--- lib/zip.h       2016-12-12 19:33:10.505159195 +0100
++++ lib/zip.h       2016-12-12 19:34:23.760976540 +0100
+@@ -37,9 +37,9 @@
+
+ #ifndef ZIP_EXTERN
+ # ifndef ZIP_STATIC
+-#  ifdef _WIN32
++#  ifdef _MSC_VER
+ #   define ZIP_EXTERN __declspec(dllimport)
+-#  elif defined(__GNUC__) && __GNUC__ >= 4
++#  elif (defined(__GNUC__) && __GNUC__ >= 4) && !defined(_WIN32)
+ #   define ZIP_EXTERN __attribute__ ((visibility ("default")))
+ #  else
+ #   define ZIP_EXTERN
