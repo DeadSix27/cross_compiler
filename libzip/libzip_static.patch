@@ -5,8 +5,8 @@ This is a quick&dirty fix.
 The bug is being discussed at
 http://www.nih.at/listarchive/libzip-discuss/msg00304.html
 
---- zip.h       2016-12-12 19:33:10.505159195 +0100
-+++ zip.h       2016-12-12 19:34:23.760976540 +0100
+--- lib/zip.h       2016-12-12 19:33:10.505159195 +0100
++++ lib/zip.h       2016-12-12 19:34:23.760976540 +0100
 @@ -37,9 +37,9 @@
 
  #ifndef ZIP_EXTERN
